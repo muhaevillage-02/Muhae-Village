@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>무해한 방범대 — 무해한 마을</title>
+<style>
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+
+:root {
+  --green:      #c2f1af;
+  --green-dark: #8dd67a;
+  --green-bg:   #b8e89e;
+  --green-mid:  #a0d880;
+  --brown:      #7e1e00;
+  --brown-mid:  #a83a00;
+  --cream:      #faf6eb;
+  --cream-dark: #f0eada;
+  --text-main:  #3a2a1a;
+  --text-sub:   #7a6a5a;
+}
+
+body {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  background: var(--cream-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 헤더 ── */
+.site-header {
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1.5px solid rgba(126,30,0,0.1);
+}
+.site-header a.back {
+  position: absolute;
+  left: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.site-header a.back svg { width: 16px; height: 16px; }
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.header-logo img { height: 32px; width: auto; }
+.header-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--brown);
+  letter-spacing: -0.02em;
+}
+
+/* ── 히어로 ── */
+.hero {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── 로고 섹션 ── */
+.logo-section {
+  background: var(--cream);
+  padding: 48px 20px 40px;
+  text-align: center;
+  position: relative;
+}
+.logo-section img.title-img {
+  max-width: 340px;
+  width: 75%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── 활동 섹션 (green bg + pattern) ── */
+.activity-section {
+  background-color: #9ed47a;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.12) 0%, transparent 50%);
+  padding: 40px 16px 56px;
+  position: relative;
+}
+
+/* 무 / 집 패턴 */
+.activity-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10' y='55' font-size='28' opacity='0.13'%3E%F0%9F%8F%A0%3C/text%3E%3Ctext x='65' y='105' font-size='22' opacity='0.1'%3E%F0%9F%A5%AC%3C/text%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.activity-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 배너 타이틀 */
+.activity-banner {
+  background: #5ec7c2;
+  color: #fff;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+}
+.activity-banner::before,
+.activity-banner::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 28px;
+  background: #5ec7c2;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+.activity-banner::before { left: -20px; }
+.activity-banner::after  { right: -20px; transform: scaleX(-1); }
+
+.activity-subtitle {
+  text-align: center;
+  font-size: clamp(14px, 3.5vw, 17px);
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* 메모 노트 영역 */
+.memo-area {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 24px 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  position: relative;
+}
+.memo-area::before {
+  content: '';
+  position: absolute;
+  top: -6px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 12px;
+  background: #ffda79;
+  border-radius: 4px;
+}
+.memo-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 14px;
+  text-align: center;
+}
+.memo-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.memo-note {
+  background: #fffde7;
+  border: 1.5px solid #ffe082;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.45;
+  text-align: center;
+  flex: 1 1 calc(50% - 10px);
+  min-width: 120px;
+  max-width: 200px;
+}
+
+/* 활동 카드 */
+.act-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+.act-card-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+}
+.act-card-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.96) saturate(1.05);
+}
+.act-card-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: #ffd54f;
+  color: var(--brown);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.act-card-body {
+  padding: 20px 20px 8px;
+}
+.act-card-tag {
+  display: inline-block;
+  background: var(--green);
+  color: var(--brown);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.act-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--brown);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.act-card-desc {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.act-card-info {
+  background: #f7fdf4;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 4px;
+}
+.act-card-info li {
+  font-size: 13px;
+  color: var(--text-main);
+  line-height: 1.7;
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+.act-card-info li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--green-dark);
+  font-weight: 900;
+}
+.act-card-footer {
+  padding: 16px 20px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.act-card-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #e0e0e0;
+  color: #999;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* 마무리 문구 */
+.closing {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-top: 8px;
+}
+.closing p {
+  font-size: clamp(14px, 3.5vw, 16px);
+  color: var(--text-main);
+  line-height: 1.8;
+  font-weight: 500;
+}
+.closing strong { color: var(--brown); font-weight: 800; }
+
+/* ── 푸터 ── */
+.site-footer {
+  background: #f0eada;
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(126,30,0,0.08);
+}
+.site-footer a { color: var(--brown); text-decoration: none; }
+.site-footer p {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .memo-note { flex: 1 1 calc(50% - 10px); font-size: 12.5px; padding: 8px 12px; }
+  .activity-banner::before, .activity-banner::after { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header class="site-header">
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 3L5 8L10 13" stroke="#7e1e00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    마을로
+  </a>
+  <a class="header-logo" href="index.html">
+    <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/707b5d8b981b4.png" alt="무해한 마을 로고">
+    <span class="header-title">무해한 마을</span>
+  </a>
+</header>
+
+<!-- 히어로 -->
+<div class="hero">
+  <img src="https://cdn.imweb.me/thumbnail/20260211/374d3cf72c628.png" alt="무해한 방범대 마을 전경" loading="eager">
+</div>
+
+<!-- 로고 섹션 -->
+<div class="logo-section">
+  <img class="title-img" src="https://cdn.imweb.me/thumbnail/20260227/0eb2603791d80.png" alt="무해한 방범대">
+</div>
+
+<!-- 활동 섹션 -->
+<section class="activity-section">
+  <div class="activity-inner">
+
+    <div class="activity-banner">무 해 한 &nbsp; 방 범 대</div>
+    <p class="activity-subtitle">유해한 세상속 무해함을 찾아서<br>함께 즐기는 봉사활동</p>
+
+    <!-- 메모 노트 -->
+    <div class="memo-area">
+      <p class="memo-title">이런 분들 계시지 않나요?</p>
+      <div class="memo-notes">
+        <div class="memo-note">판전 나 잡아?!!</div>
+        <div class="memo-note">어떻게 신청하지!</div>
+        <div class="memo-note">혼자가긴 좀 그런데</div>
+        <div class="memo-note">한 번 쯤은 해보고 싶었어</div>
+      </div>
+    </div>
+
+    <!-- 유기견 봉사 -->
+    <div class="act-card">
+      <div class="act-card-thumb">
+        <img src="https://cdn.imweb.me/thumbnail/20260227/da35d13eae1a2.png" alt="유기견 봉사" loading="lazy">
+        <span class="act-card-badge">유기견 봉사</span>
+      </div>
+      <div class="act-card-body">
+        <span class="act-card-tag">ACTIVITY 01</span>
+        <h3 class="act-card-title">유기견 봉사</h3>
+        <p class="act-card-desc">주말에 의미있는 시간을 보내고 싶다면 유기견들과 함께 의미있는 활동 프로그램</p>
+        <ul class="act-card-info">
+          <li>장소: 서울/경기 유기견 동물 보호센터</li>
+          <li>대상: 유기견 봉사에 관심있는 20대 (20~27세)</li>
+          <li>세부공지: 신청링크 참고</li>
+        </ul>
+      </div>
+      <div class="act-card-footer">
+        <span class="act-card-btn">COMING SOON</span>
+      </div>
+    </div>
+
+    <!-- BF 플로깅 -->
+    <div class="act-card">
+      <div class="act-card-thumb">
+        <img src="https://cdn.imweb.me/thumbnail/20260227/62c6455cdbd7e.png" alt="BF 플로깅" loading="lazy">
+        <span class="act-card-badge">BF 플로깅</span>
+      </div>
+      <div class="act-card-body">
+        <span class="act-card-tag">ACTIVITY 02</span>
+        <h3 class="act-card-title">BF 플로깅</h3>
+        <p class="act-card-desc">"내가 걷는 길을 내 손으로 깨끗하게"<br>작은 시도가 모여 함께 만드는 깨끗한 길<br>새로운 시도, 새로운 친구들과 함께</p>
+        <ul class="act-card-info">
+          <li>장소: 활동 전 단체공지 (서울근교)</li>
+          <li>대상: 평소 환경에 관심있었던 20대 (20~27세)</li>
+          <li>세부공지: 신청링크 참고</li>
+        </ul>
+      </div>
+      <div class="act-card-footer">
+        <span class="act-card-btn">COMING SOON</span>
+      </div>
+    </div>
+
+    <!-- 마무리 -->
+    <div class="closing">
+      <p>같은 니즈를 추구하는 <strong>20대들과 함께 모여</strong><br>
+      도전하지 못했던 망설임 보다<br>
+      <strong>"도전하는 즐거움"</strong><br>
+      무해한 마을에서 가능합니다.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer class="site-footer">
+  <p>비지니스 문의 | <a href="mailto:Muhaevillage@gmail.com">Muhaevillage@gmail.com</a></p>
+  <p>인스타그램 | @muhae_village</p>
+  <p style="margin-top:8px;">Copyright &copy; 2026 무해한 마을 All rights reserved.</p>
+</footer>
+
+</body>
+</html>

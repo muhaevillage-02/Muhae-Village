@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>마을 소개 — 무해한 마을</title>
+
+<meta name="description" content="20대 성장 소셜 플랫폼, 무해한 마을">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muhaevillage.co.kr/town-info">
+<meta property="og:title" content="마을 소개 — 무해한 마을">
+<meta property="og:description" content="20대 성장 소셜 플랫폼, 무해한 마을">
+<meta property="og:image" content="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/0da8e12c38c38.png">
+<meta name="theme-color" content="#c2f1af">
+
+<link rel="icon" type="image/png" href="https://cdn.imweb.me/thumbnail/20260227/0af01ef742930.png" sizes="196x196">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://cdn.imweb.me/thumbnail/20260227/2d04f95d92525.png">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<style>
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+
+:root {
+  --green:      #c2f1af;
+  --green-dark: #8dd67a;
+  --brown:      #7e1e00;
+  --cream:      #faf6eb;
+  --cream-dark: #f0eada;
+  --text-main:  #3a2a1a;
+  --text-sub:   #7a6a5a;
+}
+
+body {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  background: var(--cream-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 헤더 ── */
+.site-header {
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1.5px solid rgba(126,30,0,0.1);
+}
+.site-header a.back {
+  position: absolute;
+  left: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.site-header a.back svg { width: 16px; height: 16px; }
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.header-logo img { height: 32px; width: auto; }
+
+/* ── 이미지 스택 ── */
+.image-stack {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-stack img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── 푸터 ── */
+.site-footer {
+  background: var(--green);
+  color: var(--brown);
+  text-align: center;
+  padding: 20px 16px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.site-footer a {
+  color: var(--brown);
+  text-decoration: none;
+}
+.site-footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header class="site-header">
+  <a class="back" href="/community_center.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    이장님댁
+  </a>
+  <a class="header-logo" href="/index.html">
+    <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/c590d1d79bbac.png" alt="무해한 마을">
+  </a>
+</header>
+
+<!-- 마을 소개 이미지 3장 -->
+<main class="image-stack">
+  <img src="https://cdn.imweb.me/thumbnail/20260226/dd4e434a6a427.png" alt="무해한 마을 소개 1" loading="eager">
+  <img src="https://cdn.imweb.me/thumbnail/20260226/6b19a6084b3e1.png" alt="무해한 마을 소개 2" loading="lazy">
+  <img src="https://cdn.imweb.me/thumbnail/20260226/35423d6977279.png" alt="무해한 마을 소개 3" loading="lazy">
+</main>
+
+<!-- 푸터 -->
+<footer class="site-footer">
+  <p>비지니스 문의 | <a href="mailto:Muhaevillage@gmail.com">Muhaevillage@gmail.com</a></p>
+  <p>인스타그램 | @muhae_village</p>
+  <p style="margin-top: 8px; opacity: 0.7;">Copyright &copy; 2026 무해한 마을 All rights reserved.</p>
+</footer>
+
+</body>
+</html>

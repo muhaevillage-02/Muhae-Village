@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>5분만에 주도권을 가져오는 대화법 — 무해한 마을</title>
+
+<meta name="description" content="20대 성장 소셜 플랫폼, 무해한 마을 - Project 01">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://muhaevillage.co.kr/project1">
+<meta property="og:title" content="5분만에 주도권을 가져오는 대화법 — 무해한 마을">
+<meta property="og:description" content="전문가 100인이 추천한 실전 대화 기술, 드디어 공개!">
+<meta property="og:image" content="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/0da8e12c38c38.png">
+<meta name="theme-color" content="#c2f1af">
+
+<link rel="icon" type="image/png" href="https://cdn.imweb.me/thumbnail/20260227/0af01ef742930.png" sizes="196x196">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://cdn.imweb.me/thumbnail/20260227/2d04f95d92525.png">
+
+<!-- 폰트 -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<style>
+/* ── A2z 폰트 ── */
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+  font-weight: 100; font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+
+* { -webkit-tap-highlight-color: transparent; box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green:      #c2f1af;
+  --brown:      #7e1e00;
+  --cream:      #faf6eb;
+  --cream-dark: #f0eada;
+  --text-main:  #3a2a1a;
+  --text-sub:   #7a6a5a;
+}
+
+body {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  background: var(--cream-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 헤더 ── */
+.site-header {
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1.5px solid rgba(126,30,0,0.1);
+}
+.site-header a.back {
+  position: absolute;
+  left: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.site-header a.back svg { width: 16px; height: 16px; }
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.header-logo img { height: 32px; width: auto; }
+
+/* ── 컨테이너 ── */
+.tri-container, .tri-container * {
+  font-family: 'A2z', 'Pretendard Variable', sans-serif;
+  box-sizing: border-box;
+}
+
+.tri-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ── 헤더 영역 ── */
+.detail-header-wrap {
+  border-bottom: 2px solid #021d74;
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+}
+.tri-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: #e8534e;
+  margin-bottom: 15px;
+}
+.detail-title {
+  font-size: 50px;
+  font-weight: 900;
+  color: #111;
+  margin: 0 0 20px 0;
+  word-break: keep-all;
+}
+.detail-meta {
+  color: #666;
+  font-size: 20px;
+}
+
+/* ── 메인 레이아웃 ── */
+.detail-layout {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+.detail-main {
+  flex: 2;
+}
+.detail-sidebar {
+  flex: 1;
+  position: sticky;
+  top: 100px;
+}
+
+/* ── 본문 요소 ── */
+.main-image-wrap {
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  background: #fcfcfc;
+}
+.main-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.image-caption {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #021d74;
+}
+
+.tri-h2 {
+  font-size: 20px;
+  color: #021d74;
+  font-weight: 900;
+  margin: 50px 0 25px;
+  border-left: 5px solid #021d74;
+  padding-left: 15px;
+}
+.tri-p {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 25px;
+  white-space: pre-line;
+}
+.tri-highlight {
+  background: #f4f7ff;
+  border-left: 5px solid #e8534e;
+  padding: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 35px 0;
+  color: #333;
+}
+
+/* ── 사이드바 카드 ── */
+.urgent-card {
+  background: linear-gradient(145deg, #e8f8f5, #d4efdf);
+  border: 3px solid #27ae60;
+  border-radius: 15px;
+  padding: 25px 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+  animation: pulse-border 1.5s infinite;
+}
+.urgent-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  animation: bounce 0.8s infinite alternate;
+  display: block;
+}
+.urgent-card h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+.urgent-card .highlight-text {
+  color: #27ae60;
+  font-size: 24px;
+  display: inline-block;
+  margin-top: 5px;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+}
+.urgent-card p {
+  font-size: 16px;
+  font-weight: 800;
+  color: #27ae60;
+  margin-bottom: 0;
+  word-break: keep-all;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+@keyframes pulse-border {
+  0%   { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.6); }
+  70%  { box-shadow: 0 0 0 15px rgba(39, 174, 96, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+}
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10px); }
+}
+
+/* ── 신청 CTA ── */
+.apply-cta-section {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px;
+  background: #f9fdfa;
+  border-radius: 20px;
+  border: 1px dashed #27ae60;
+}
+
+/* ── 신청 폼 섹션 ── */
+.apply-section {
+  margin-top: 20px;
+  padding: 50px;
+  background: #f9fdfa;
+  border-radius: 20px;
+  border: 1px solid #e0f2e9;
+  box-shadow: 0 15px 40px rgba(39, 174, 96, 0.08);
+}
+.apply-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.apply-header h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #111;
+  margin: 0 0 10px;
+}
+.apply-header p {
+  font-size: 16px;
+  color: #666;
+}
+
+.form-group {
+  margin-bottom: 35px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+.form-section-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 20px 0;
+  border-left: 5px solid #27ae60;
+  padding-left: 15px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.input-grid input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'A2z', 'Pretendard Variable', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.input-grid input:focus,
+.form-group textarea:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  background: #f5f5f5;
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+.radio-label:hover { background: #e8f8f5; }
+.radio-label:has(input[type="radio"]:checked) { color: #000; background: #e8f8f5; }
+.radio-label input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #27ae60;
+  width: 18px;
+  height: 18px;
+}
+
+.form-hint {
+  color: #888;
+  font-size: 14px;
+  margin: -10px 0 15px 0;
+}
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'A2z', 'Pretendard Variable', sans-serif;
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.3s;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 22px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: 'A2z', 'Pretendard Variable', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+  text-align: center;
+  margin-top: 20px;
+}
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(39, 174, 96, 0.4);
+}
+
+/* ── 완료 화면 ── */
+.completion-wrap {
+  text-align: center;
+  padding: 100px 20px;
+  background: #f9fdfa;
+  border-radius: 20px;
+  border: 1px solid #e0f2e9;
+  box-shadow: 0 15px 40px rgba(39, 174, 96, 0.08);
+  margin-top: 20px;
+}
+.completion-wrap h2 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #27ae60;
+  margin-bottom: 20px;
+}
+.completion-wrap p {
+  font-size: 20px;
+  color: #555;
+  word-break: keep-all;
+}
+
+/* ── 푸터 ── */
+.site-footer {
+  background: var(--green);
+  color: var(--brown);
+  text-align: center;
+  padding: 20px 16px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.site-footer a {
+  color: var(--brown);
+  text-decoration: none;
+}
+.site-footer a:hover { text-decoration: underline; }
+
+/* ── 모바일 반응형 ── */
+@media (max-width: 768px) {
+  .detail-title { font-size: 28px; }
+  .detail-layout { flex-direction: column; gap: 40px; }
+  .detail-sidebar { position: static; width: 100%; }
+  .main-image-wrap { padding: 20px; }
+  .urgent-card { padding: 20px 15px; }
+  .apply-section { padding: 30px 20px; }
+  .input-grid { grid-template-columns: 1fr; }
+  .form-group { padding: 20px; }
+  .radio-group { gap: 10px; }
+  .radio-label { width: 100%; justify-content: flex-start; }
+  .submit-btn { font-size: 20px; padding: 18px; }
+  .completion-wrap { padding: 60px 20px; }
+  .completion-wrap h2 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header class="site-header">
+  <a class="back" href="/store.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    문방구
+  </a>
+  <a class="header-logo" href="/index.html">
+    <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/c590d1d79bbac.png" alt="무해한 마을">
+  </a>
+</header>
+
+<!-- 메인 컨테이너 -->
+<div class="tri-container">
+
+  <!-- ===== 뷰 1: 상세 페이지 ===== -->
+  <div id="view-main">
+    <div class="detail-header-wrap">
+      <span class="tri-badge">OPEN</span>
+      <h1 class="detail-title">&lt;5분만에 주도권을 가져오는 대화법&gt;</h1>
+      <div class="detail-meta">
+        <span>&#x1F4CD; 정식 출간 전 "테스터 모집 중"</span>
+      </div>
+    </div>
+
+    <div class="detail-layout">
+      <!-- 본문 -->
+      <div class="detail-main">
+        <div class="main-image-wrap">
+          <img src="https://i.ifh.cc/bstvrf.jpg" alt="5분만에 주도권을 가져오는 대화법 책 표지" class="main-image">
+          <p class="image-caption">&#x1F389; 전문가 100인이 추천한 실전 대화 기술, 드디어 공개! &#x1F389;</p>
+        </div>
+
+        <h2 class="tri-h2">1. 프로젝트 연구 취지 : 20대의 진짜 고민을 듣다</h2>
+        <p class="tri-p">20대를 대상으로 150명을 직접 만나 인간관계에 대한 인터뷰를 진행했습니다. 그중 약 80%가 "인간관계를 잘 맺고 유지하고 싶지만, 자신감이 없다"는 것을 가장 큰 고민으로 꼽았습니다.</p>
+
+        <p class="tri-p">많은 분들이 스스로를 '대화를 못하는 사람', '매력 없는 사람', '뒤쳐지는 사람'으로 인식하고 계셨습니다. 혹시 여러분도 비슷한 고민을 해보신 적이 있으신가요?</p>
+
+        <p class="tri-p">사실 요즘은 한 번만 대화가 꼬여도 '사회성 부족'으로 오해받을까 불안해하는 분위기입니다. 그러다 보니 실패하지 않으려고 오히려 마음의 벽을 높게 쌓거나, 마음에 드는 사람 앞에서 오히려 더 무뚝뚝해지시는 분들이 많아지는 것 같습니다. 이러한 현실에 깊이 공감하며 연구를 시작했습니다.</p>
+
+        <h2 class="tri-h2">2. 우리가 발견한 문제 : 나를 알아갈 기회의 부재</h2>
+        <div class="tri-highlight">
+          "경제적인 부담과 정보의 홍수 속에서 나에게 맞는 방법을 찾기가 너무 어려워요."
+        </div>
+        <p class="tri-p">저희가 찾아낸 근본적인 원인은 청년들이 "나에게 맞는 대화법" 등 자신을 알아갈 "기회"를 얻기가 어렵다는 것이었습니다.
+
+책 한 권을 사려고 해도 2만 원이 훌쩍 넘는 가격이 부담스럽고, 막상 사더라도 바로 적용하기 어려워 완독하지 못하는 경우가 많습니다. 그렇다고 SNS에서 주는 단편적인 정보들을 다 믿기도 어렵고, 타인과 비교하느라 마음만 조급해지기도 합니다. 이러한 경험, 다들 한 번쯤 있으시죠?</p>
+
+        <h2 class="tri-h2">3. 솔루션 : 부담 없는 성장의 공간, '무해한 문방구'</h2>
+        <p class="tri-p">NEW Project '5분만에 주도권을 가져오는 대화법' 책자 출간을 기점으로, 다양하게 준비중
+
+어릴 적, 단돈 몇백 원으로도 이것저것 구경하고 부담 없이 내가 좋아하는 걸 골라 잡을 수 있었던 설레는 문방구처럼, 청년들이 금전적 부담 없이 자신을 탐색할 수 있는 공간을 만들고자 합니다.</p>
+
+        <div class="tri-highlight" style="background: #fff; border: 2px solid #021d74; border-left: 5px solid #021d74;">
+          &#x1F919;&#x1F3FB; <b>무해한 문방구의 약속</b> &#x1F919;&#x1F3FB;<br><br>
+          • 복잡하고 어려운 정보가 아닌, <b>한 번에 쓱 봐도 이해되는 콘텐츠</b><br>
+          • 다양한 리워드와 경험으로 제공되는 <b>부담 없는 자기 탐색 기회</b><br>
+          • 고민 별로 <b>나에게 꼭 맞는 발전 방향</b>을 쉽게 찾아 드립니다.
+        </div>
+
+        <p class="tri-p">그 첫 번째 결과물로, 전문가 100인의 추천을 받아 실전에서 바로 사용할 수 있는 대화 기술을 담은 &lt;5분만에 주도권을 가져오는 대화법&gt;의 테스터를 정식 모집합니다.</p>
+      </div>
+
+      <!-- 사이드바 -->
+      <div class="detail-sidebar">
+        <div class="urgent-card">
+          <span class="urgent-icon">&#x1F393;&#x1F389;&#x1F64B;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</span>
+          <h3>110명 서울/경기 대학생들이<br><span class="highlight-text">이미 참여중이에요!</span></h3>
+          <p>&#x1F6A8; 테스터 모집 마감직전 &#x1F6A8;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="apply-cta-section">
+      <h3 style="font-size: 24px; font-weight: 800; color: #111; margin-bottom: 20px;">대화에도 스킬이 필요하다?</h3>
+      <button type="button" class="submit-btn" onclick="showFormPage()">지금 바로 테스터 신청하러 가기 &#x1F525;</button>
+    </div>
+  </div>
+
+
+  <!-- ===== 뷰 2: 신청 폼 ===== -->
+  <div id="view-form" style="display: none;">
+    <div class="apply-section">
+      <div class="apply-header">
+        <h2>테스터 신청서 작성</h2>
+        <p>간단한 정보 입력 후 나에게 꼭 맞는 노하우를 확인하세요.</p>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)">
+
+        <div class="form-group">
+          <h3 class="form-section-title">기본 정보</h3>
+          <div class="input-grid">
+            <input type="text" name="name" placeholder="이름을 적어주세요" required>
+            <input type="tel" name="phone" placeholder="연락처 (예: 010-1234-5678)" required>
+            <input type="text" name="birth" placeholder="생년월일 (예: 990101)" required>
+            <input type="text" name="school" placeholder="재학중인 학교 (대학생 일 시)">
+            <input type="text" name="location" placeholder="거주지 (동까지, 예: 서초동)" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3 class="form-section-title">현재 가장 고민이 있는 파트는?</h3>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="worry_part" value="취업" required> 취업
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="worry_part" value="학교생활"> 학교생활
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="worry_part" value="자기계발"> 자기계발
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="worry_part" value="체력관리"> 체력관리
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="worry_part" value="대인관계"> 대인관계
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3 class="form-section-title">나의 일주일 스케줄 어떻게 시간을 사용하고 있나요?</h3>
+          <p class="form-hint">(ex 월 10~15시 학교, 토 13~17시 동아리)</p>
+          <textarea name="schedule" rows="3" placeholder="간략하게 일주일 스케줄을 적어주세요." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <h3 class="form-section-title">현재 가장 고민인 부분을 자유롭게 적어주세요.</h3>
+          <textarea name="concern" rows="4" placeholder="어떤 점이 가장 답답하고 고민이신가요?" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">신청 완료하기 &#x2705;</button>
+
+        <button type="button" onclick="showMainPage()" style="display:block; width:100%; text-align:center; background:none; border:none; color:#888; margin-top:15px; text-decoration:underline; cursor:pointer; font-size: 16px; font-family: 'A2z', sans-serif;">
+          상세페이지로 돌아가기
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ===== 뷰 3: 완료 화면 ===== -->
+  <div id="view-complete" style="display: none;">
+    <div class="completion-wrap">
+      <span class="urgent-icon" style="font-size: 70px; margin-bottom: 20px; display: inline-block;">&#x1F389;</span>
+      <h2>신청이 완료되었습니다!</h2>
+      <p>소중한 의견 감사합니다.<br>남겨주신 내용을 바탕으로 빠르게 찾아뵙겠습니다.</p>
+      <button type="button" class="submit-btn" style="max-width: 300px; margin: 40px auto 0; font-size: 20px; padding: 15px;" onclick="showMainPage()">
+        처음으로 돌아가기
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- 푸터 -->
+<footer class="site-footer">
+  <p>비지니스 문의 | <a href="mailto:Muhaevillage@gmail.com">Muhaevillage@gmail.com</a></p>
+  <p>인스타그램 | @muhae_village</p>
+  <p style="margin-top: 8px; opacity: 0.7;">Copyright &copy; 2026 무해한 마을 All rights reserved.</p>
+</footer>
+
+<script>
+function showFormPage() {
+  document.getElementById('view-main').style.display = 'none';
+  document.getElementById('view-form').style.display = 'block';
+  document.getElementById('view-complete').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showMainPage() {
+  document.getElementById('view-form').style.display = 'none';
+  document.getElementById('view-complete').style.display = 'none';
+  document.getElementById('view-main').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6aSbqgh98OqdufJ4OgADEW9CWfZh1htPx6ARLjBY73bCtnHL-pVaDPf_Qje2sLJr-/exec';
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  var form = event.target;
+  var submitBtn = form.querySelector('.submit-btn');
+
+  // 버튼 로딩 상태
+  submitBtn.textContent = '제출 중...';
+  submitBtn.disabled = true;
+
+  var data = {
+    name:     form.name.value,
+    phone:    form.phone.value,
+    birth:    form.birth.value,
+    school:   form.school.value,
+    location: form.location.value,
+    worry:    form.worry_part.value,
+    schedule: form.schedule.value,
+    concern:  form.concern.value
+  };
+
+  fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(data)
+  })
+  .then(function() {
+    document.getElementById('view-form').style.display = 'none';
+    document.getElementById('view-complete').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  })
+  .catch(function() {
+    // no-cors 모드에서는 에러 없이 완료 화면 표시
+    document.getElementById('view-form').style.display = 'none';
+    document.getElementById('view-complete').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+</script>
+
+</body>
+</html>

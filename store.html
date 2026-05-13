@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>무해한 문방구 — 무해한 마을</title>
+<style>
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+
+:root {
+  --green:      #c2f1af;
+  --green-dark: #8dd67a;
+  --brown:      #7e1e00;
+  --brown-mid:  #a83a00;
+  --brown-hover:#a32800;
+  --cream:      #faf6eb;
+  --cream-dark: #f0eada;
+  --text-main:  #3a2a1a;
+  --text-sub:   #7a6a5a;
+}
+
+body {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 헤더 ── */
+.site-header {
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1.5px solid rgba(126,30,0,0.1);
+}
+.site-header a.back {
+  position: absolute;
+  left: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.site-header a.back svg { width: 16px; height: 16px; }
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.header-logo img { height: 32px; width: auto; }
+.header-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--brown);
+  letter-spacing: -0.02em;
+}
+
+/* ── 히어로 ── */
+.hero {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ── 타이틀 섹션 ── */
+.title-section {
+  background: var(--cream);
+  padding: 48px 20px 0;
+  text-align: center;
+}
+.title-section img {
+  max-width: 320px;
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── 인트로 섹션 ── */
+.intro-section {
+  background: var(--cream);
+  padding: 32px 20px 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.intro-icon {
+  flex-shrink: 0;
+  width: 90px;
+}
+.intro-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.intro-bubble {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(126,30,0,0.07);
+  flex: 1;
+  position: relative;
+}
+.intro-bubble::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 28px;
+  border: 10px solid transparent;
+  border-right-color: #fff;
+  border-left: 0;
+  filter: drop-shadow(-2px 0 3px rgba(126,30,0,0.06));
+}
+.intro-bubble p {
+  font-size: clamp(14px, 3.5vw, 16px);
+  color: var(--text-main);
+  line-height: 1.75;
+}
+.intro-bubble strong { color: var(--brown); font-weight: 800; }
+
+/* ── 설명 섹션 ── */
+.desc-section {
+  background: var(--cream-dark);
+  padding: 40px 20px 48px;
+}
+.desc-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-direction: row-reverse;
+}
+.desc-bubble {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(126,30,0,0.07);
+  flex: 1;
+  position: relative;
+}
+.desc-bubble::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 28px;
+  border: 10px solid transparent;
+  border-left-color: #fff;
+  border-right: 0;
+}
+.desc-bubble p {
+  font-size: clamp(13.5px, 3.3vw, 15.5px);
+  color: var(--text-main);
+  line-height: 1.8;
+}
+.desc-bubble strong { color: var(--brown); font-weight: 800; }
+.desc-icon {
+  flex-shrink: 0;
+  width: 80px;
+}
+.desc-icon img { width: 100%; display: block; }
+
+/* ── 프로젝트 섹션 ── */
+.projects-section {
+  background: var(--cream);
+  padding: 48px 20px 64px;
+}
+.projects-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.projects-title {
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 800;
+  color: var(--brown);
+  text-align: center;
+  margin-bottom: 32px;
+}
+.project-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1.5px solid rgba(126,30,0,0.07);
+  display: flex;
+  gap: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(126,30,0,0.1); }
+
+.project-thumb {
+  width: 120px;
+  min-height: 140px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.97) saturate(1.05);
+}
+.project-body {
+  padding: 18px 18px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.project-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+.badge-open    { background: var(--brown); color: var(--green); }
+.badge-soon    { background: rgba(255,255,255,0.9); color: var(--brown); border: 1px solid rgba(126,30,0,0.25); }
+.badge-plan    { background: #e0e0e0; color: #777; }
+
+.project-name {
+  font-size: clamp(14px, 3.5vw, 16px);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+.project-desc {
+  font-size: 12.5px;
+  color: var(--text-sub);
+  line-height: 1.6;
+  flex: 1;
+}
+.project-apply {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+.project-apply span { font-size: 11px; }
+.project-btn {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 6px;
+  width: fit-content;
+  cursor: pointer;
+}
+.project-btn.active {
+  background: var(--brown);
+  color: #fff;
+  transition: background 0.2s;
+}
+.project-btn.active:hover { background: var(--brown-hover); }
+.project-btn.inactive { background: #e8e8e8; color: #aaa; pointer-events: none; }
+
+/* ── 푸터 ── */
+.site-footer {
+  background: var(--cream-dark);
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(126,30,0,0.08);
+}
+.site-footer a { color: var(--brown); text-decoration: none; }
+.site-footer p {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.8;
+}
+
+@media (max-width: 540px) {
+  .intro-section, .desc-inner { flex-direction: column; align-items: center; }
+  .intro-icon, .desc-icon { width: 70px; }
+  .intro-bubble::before, .desc-bubble::after { display: none; }
+  .project-thumb { width: 100px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header class="site-header">
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 3L5 8L10 13" stroke="#7e1e00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    마을로
+  </a>
+  <a class="header-logo" href="index.html">
+    <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/707b5d8b981b4.png" alt="무해한 마을 로고">
+    <span class="header-title">무해한 마을</span>
+  </a>
+</header>
+
+<!-- 히어로 -->
+<div class="hero">
+  <img src="https://cdn.imweb.me/thumbnail/20260226/2fd53229bfa55.png" alt="무해한 문방구" loading="eager">
+</div>
+
+<!-- 타이틀 -->
+<div class="title-section">
+  <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/c590d1d79bbac.png" alt="무해한 무방구">
+</div>
+
+<!-- 인트로 -->
+<div class="intro-section">
+  <div class="intro-icon">
+    <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/7247cc6d69d01.png" alt="크레용" loading="lazy">
+  </div>
+  <div class="intro-bubble">
+    <p>안녕하세요 <strong>무무들!</strong><br>
+    단돈 몇백 원으로도 이것저것 구경하고,<br>
+    <strong>부담 없이</strong> 내가 좋아하는 걸 골라 잡을 수 있는<br>
+    <strong>설레는 공간</strong>이었던 문방구, 기억나시나요?</p>
+  </div>
+</div>
+
+<!-- 설명 -->
+<div class="desc-section">
+  <div class="desc-inner">
+    <div class="desc-bubble">
+      <p>청년들이 <strong>금전적 부담 없이</strong> 자신을 탐색할 수 있는<br>
+      다양한 리워드와 경험들만 모아두었어요.<br><br>
+      복잡하고 어려운 정보가 아니라,<br>
+      <strong>한 번에 쏙 봐도 이해되는 콘텐츠</strong>들로 채워서<br>
+      고민 별로 나에게 맞고, 발전시킬 수 있다는<br>
+      <strong>확신을 쉽게 찾아가실 수 있도록</strong> 만들었어요!</p>
+    </div>
+  </div>
+</div>
+
+<!-- 프로젝트 목록 -->
+<section class="projects-section">
+  <div class="projects-inner">
+    <h2 class="projects-title">무방구 콘텐츠</h2>
+
+    <!-- Project 01 -->
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/baca112b997a9.jpg" alt="5분만에 주도권을 가져오는 대화법" loading="lazy">
+      </div>
+      <div class="project-body">
+        <span class="project-badge badge-open">Project 01. 모집중</span>
+        <p class="project-name">&lt;5분만에 주도권을 가져오는 대화법&gt;</p>
+        <p class="project-desc">사회 속에서 겪는 대화의 갈등, 자신의 의견을 내세우기 어려운 20대를 위해 준비했습니다. 당황하지 않고 내 페이스를 유지하며 할 말은 다 하는 실전 밀착형 대화 스킬을 배워보세요.</p>
+        <p class="project-apply"><span>신청방법:</span> 상세페이지 공지확인</p>
+        <a href="project1.html" class="project-btn active">신청하기</a>
+      </div>
+    </div>
+
+    <!-- Project 02 -->
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/e49b36b96f422.jpg" alt="나를 지키는 다정한 거절의 기술" loading="lazy">
+      </div>
+      <div class="project-body">
+        <span class="project-badge badge-soon">Project 02. 오픈예정</span>
+        <p class="project-name">&lt;나를 지키는 다정한 '거절'의 기술&gt;</p>
+        <p class="project-desc">좋은 사람으로 남고 싶어 무리한 부탁을 혼자 떠안고 있진 않나요? 인간관계를 해치지 않으면서도 단호하고 우아하게 선을 긋는 건강한 거절의 마인드셋과 화법.</p>
+        <p class="project-apply"><span>신청방법:</span> 프로젝트 준비 중</p>
+        <span class="project-btn inactive">Coming Soon</span>
+      </div>
+    </div>
+
+    <!-- Project 03 -->
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="https://cdn.imweb.me/upload/S20260131b6d309cd641c4/8743d8dbc69b6.jpg" alt="어색한 침묵을 깨는 스몰토크 치트키" loading="lazy">
+      </div>
+      <div class="project-body">
+        <span class="project-badge badge-plan">Project 03. 기획중</span>
+        <p class="project-name">&lt;어색한 침묵을 깨는 스몰토크 치트키&gt;</p>
+        <p class="project-desc">새로운 모임, 대외활동 첫 날... 낯선 사람들과의 첫 만남이 두려운 내향인 주목! 누구와도 자연스럽게 대화를 이어갈 수 있는 마법의 질문 리스트와 리액션 공식을 알려드립니다.</p>
+        <p class="project-apply"><span>신청방법:</span> 커리큘럼 준비 중</p>
+        <span class="project-btn inactive">Coming Soon</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer class="site-footer">
+  <p>비지니스 문의 | <a href="mailto:Muhaevillage@gmail.com">Muhaevillage@gmail.com</a></p>
+  <p>인스타그램 | @muhae_village</p>
+  <p style="margin-top:8px;">Copyright &copy; 2026 무해한 마을 All rights reserved.</p>
+</footer>
+
+</body>
+</html>
